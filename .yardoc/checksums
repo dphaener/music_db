@@ -1,0 +1,4 @@
+lib/music_db.rb 3871890141b4dc7de8fd0f7f039bb8ef129e71f0
+lib/music_db/song.rb 3bd7870909724b5dbe6edcd1a8fa41fe08086c2a
+lib/music_db/artist.rb d09f4ab2c75ad44b526dcf11e2d4d57965827c2c
+lib/music_db/yamlable.rb 6254e4249937f16f5698816f917c5597768cb93c
