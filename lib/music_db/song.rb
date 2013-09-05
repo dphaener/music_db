@@ -1,11 +1,20 @@
-require 'yaml'
+require_relative 'yamlable'
 
 class Song
+  include YAMLable
+  
+  def initialize(**options)
+    @title = options[:title]
+    @artist = options[:artist]
+    @album = options[:album]
+    @track = options[:track]
+    @notes = options[:notes]
+  end
   
   attr_accessor :title, :artist, :album, :track, :notes
   
   def to_s
-    output = "Title: #{@artist}\n"
+    output = "Title: #{@title}\n"
     output << "Artist: #{@artist}\n"
     output << "Album: #{@album}\n"
     output << "Track: #{@track}\n"
@@ -14,23 +23,14 @@ class Song
     output
   end
   
-  def to_yaml
-    the_song = {
+  def attributes
+    {
       title: @title,
       artist: @artist,
       album: @album,
       track: @track,
       notes: @notes
     }
-    
-    YAML.dump(the_song)
-  end
-  
-  def dump(filename=nil)
-    filename ||= @title
-    filename ||= 'unknown'
-    
-    File.write("#{filename}.yml", to_yaml)
   end
 end
  
