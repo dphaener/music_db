@@ -1,6 +1,6 @@
 require_relative 'yamlable'
 
-class Song
+class MusicDB::Song
   include YAMLable
   
   def initialize(**options)
