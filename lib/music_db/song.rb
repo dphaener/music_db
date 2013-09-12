@@ -13,11 +13,11 @@ class MusicDB::Song
   # @param notes [String] any notes worth mentioning.
   def initialize(title: title, artist: artist, album: nil, track: nil, notes: nil)
     # Initialize the objects attributes with the given parameters.
-    @title = options[:title]
-    @artist = options[:artist]
-    @album = options[:album]
-    @track = options[:track]
-    @notes = options[:notes]
+    @title = title
+    @artist = artist
+    @album = album
+    @track = track
+    @notes = notes
   end
   
   attr_accessor :title, :artist, :album, :track, :notes
